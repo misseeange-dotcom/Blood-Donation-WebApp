@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>
@@ -6,7 +6,7 @@
         </title>
      <style>
         body{
-            background-color: white;
+            background-color: #fdeeee;
             font-family: arial,sans-serif;
             color:red;
             display: flex;
@@ -26,7 +26,7 @@
             position: fixed;
             align-items: center;
             text-align: center;
-            background-color:rgb(247, 215, 215);
+            background-color:white;
             z-index: 1;
             border-radius: 10px ;
 
@@ -40,7 +40,7 @@
             display: flex;
             flex-direction: column;
             border-right: color red;
-            background-color:rgb(247, 215, 215);
+            background-color:white;
             border-radius: 10px;
 
         }
@@ -80,7 +80,7 @@
             text-align: center;
         }
         .sub-title{
-            color: gray;
+            color: rgb(186, 185, 185);
             margin-top: 0;
             font-family: italic;
             text-align: center;
@@ -90,13 +90,13 @@
             width: 400px;
             flex-direction: row;
             align-items: center;
-            background-color: rgb(217, 214, 214);
+            background-color:#ffffff;
             margin:10px;
             border-top-left-radius: 8px;
             border-bottom-right-radius: 8px;
         }
         .title1{
-        color: white;
+        color: rgb(186, 185, 185);
         text-align: center;
         }
         .title2{
@@ -113,30 +113,31 @@
         }
         .referdonor-form{
             width: 400px;
-            height: 280px;
-            background-color: red;
-            border-top-left-radius: 8px;
-            border-bottom-right-radius: 8px;
+            height: 299px;
+            background-color: white;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
             display: flex;
             flex-direction: column;
         }
         input{
             margin: 0px 10px 11px ;
-            height: 27px;
+            height: 30px;
             border-radius: 5px;
             outline: none;
-            border: solid transparent;
+            border: solid gray 1px;
         }
         .form-title{
-            color: white;
+            color: red;
             text-align: center;
             font-size: 18px;
+            margin-top: 20px;
         }
         .sendrequest-btn{
             padding-top: 10px;
-            background-color: greenyellow;
-            width: 95px;
-            margin-left: 160px;
+            background-color:red;
+            width: 150px;
+            margin-left: 120px;
             margin-top: 5px;
             color: white;
             font-weight: bold;
@@ -175,69 +176,123 @@
                 <option value="AB-"></option>
             </datalist>
             </datalist>
-            <input type="text" placeholder="enter refered donor's location eg REGION-CITIES-QUATER" list="location" id="location-input" required>
-            <datalist id="location">
-    <-- Adamawa Region-->
-    <option value="Adamawa - Ngaoundéré"></option>
-    <option value="Adamawa - Meiganga"></option>
-    <option value="Adamawa - Tibati"></option>
-
-    <-- Centre Region -->
-    <option value="Centre - Yaoundé (Bastos)"></option>
-    <option value="Centre - Yaoundé (Biyem-Assi)"></option>
-    <option value="Centre - Yaoundé (Mvan)"></option>
-    <option value="Centre - Yaoundé (Mendong)"></option>
-    <option value="Centre - Mbalmayo"></option>
-    <option value="Centre - Obala"></option>
-
-    <-- East Region -->
-    <option value="East - Bertoua"></option>
-    <option value="East - Batouri"></option>
-    <option value="East - Abong-Mbang"></option>
-
-    <-- Far North Region -->
-    <option value="Far North - Maroua"></option>
-    <option value="Far North - Kousséri"></option>
-    <option value="Far North - Mokolo"></option>
-
-    <-- Littoral Region -->
-    <option value="Littoral - Douala (Akwa)"></option>
-    <option value="Littoral - Douala (Bonanjo)"></option>
-    <option value="Littoral - Douala (Bonabéri)"></option>
-    <option value="Littoral - Douala (Bépanda)"></option>
-    <option value="Littoral - Edéa"></option>
-    <option value="Littoral - Nkongsamba"></option>
-
-    <-- North Region -->
-    <option value="North - Garoua"></option>
-    <option value="North - Guider"></option>
-    <option value="North - Tchéboa"></option>
-
-    <-- North West Region -->
-    <option value="North West - Bamenda (Up Station)"></option>
-    <option value="North West - Bamenda (Commercial Avenue)"></option>
-    <option value="North West - Nkwen"></option>
-    <option value="North West - Ndop"></option>
-    <option value="North West - Kumbo"></option>
-
-    <-- South Region -->
-    <option value="South - Ebolowa"></option>
-    <option value="South - Kribi"></option>
-    <option value="South - Sangmélima"></option>
-
-    <-- South West Region -->
-    <option value="South West - Buea (Molyko)"></option>
-    <option value="South West - Buea (Town)"></option>
-    <option value="South West - Limbe"></option>
-    <option value="South West - Kumba"></option>
-
-    <-- West Region -->
-    <option value="West - Bafoussam"></option>
-    <option value="West - Dschang"></option>
-    <option value="West - Foumban"></option>
-    <option value="West - Bangangté"></option>
-</>
+             </datalist>
+            <input type="text" placeholder="enter referd donor's sub-division eg Yaounde 1 " list="sub-divisions" id="sub" required>
+            <datalist id="sub-divisions">
+                <option value="Yaounde 1"></option>
+                <option value="Yaounde 2"></option>
+                <option value="Yaounde 3"></option>
+                <option value="Yaounde 4"></option>
+                <option value="Yaounde 5"></option>
+                <option value="Yaounde 6"></option>
+                <option value="Yaounde 7"></option>
+                <option value="Bafia"></option>
+                <option value="Mbalmayo"></option>
+                <option value="Obala"></option>
+                <option value="Akonolinga"></option>
+                <option value="Monatele"></option>
+                <option value="Eseka"></option>
+                <option value="Nanga-Eboko"></option>
+                <option value="Sa'a"></option>
+                <option value="Ndikinimeki"></option>
+                <option value="Yoko"></option>
+                <option value="Douala 1"></option>
+                <option value="Douala 2"></option>
+                <option value="Douala 3"></option>
+                <option value="Douala 4"></option>
+                <option value="Douala 5"></option>
+                <option value="Douala 6"></option>
+                <option value="Edea 1"></option>
+                <option value="Edea 2"></option>
+                <option value="Nkongsamba 1"></option>
+                <option value="Nkongsamba 1"></option>
+                <option value="Nkongsamba 3"></option>
+                <option value="Loum"></option>
+                <option value="Yabassi"></option>
+                <option value="Manjo"></option>
+                <option value="Dizangue"></option>
+                <option value="Bafoussam 1"></option>
+                <option value="Bafoussam 2"></option>
+                <option value="Bafoussam 3"></option>
+                <option value="Dschang"></option>
+                <option value="Foumban"></option>
+                <option value="Mbouda"></option>
+                <option value="Bafang"></option> 
+                <option value="Bagangte"></option>
+                <option value="Foumbot"></option>
+                <option value="Babam"></option>
+                <option value="Bandjoun"></option>
+                <option value="kumbo"></option> 
+                <option value="Wum"></option>
+                <option value="Ndop"></option>
+                <option value="Bamenda 1"></option>
+                <option value="Bamenda 2"></option>
+                <option value="Bamenda 3"></option>
+                <option value="Fundong"></option>
+                <option value="Bali"></option> 
+                <option value="Batibo"></option>
+                <option value="Mbengwi"></option>
+                <option value="Buea"></option>
+                <option value="Limbe 1"></option>
+                <option value="Limbe 2"></option>
+                <option value="Limbe 3"></option>
+                <option value="Kumba 1"></option>
+                <option value="Kumba 2"></option>
+                <option value="Kumba 3"></option>
+                <option value="Tiko"></option>
+                <option value="Muyuka"></option>
+                <option value="Mamfe"></option>
+                <option value="Mundemba"></option>
+                <option value="Ekondo-tit"></option>
+                <option value="Ebolowa 1"></option>
+                <option value="Ebolowa 2"></option>
+                <option value="Kribi 1"></option>
+                <option value="Kribi 2"></option>
+                <option value="Sangmelima"></option>
+                <option value="Ambam"></option>
+                <option value="Djoum"></option>
+                <option value="Meyomessala"></option>
+                <option value="Lolodorf"></option>
+                <option value="Bertoua 1"></option>
+                <option value="Bertoua 2"></option>
+                <option value="Batouri"></option>
+                <option value="Abong-Mbang"></option>
+                <option value="Yokadouma"></option>
+                <option value="Garoua-Boulai"></option>
+                <option value="Lomie"></option>
+                <option value="Messamena"></option>
+                <option value="Garoua 1"></option>
+                <option value="Garoua 2"></option>
+                <option value="Garoua 3"></option>
+                <option value="Guider"></option>
+                <option value="Poli"></option>
+                <option value="Lagdo"></option>
+                <option value="Tchollire"></option>
+                <option value="Figuil"></option>
+                <option value="Pitoa"></option>
+                <option value="Ngaroundere 1"></option>
+                <option value="Ngaroundere 2"></option>
+                <option value="Ngaroundere 3"></option>
+                <option value="Meiganga"></option>
+                <option value="Banyo"></option>
+                <option value="Tibati"></option>
+                <option value="Tignere"></option>
+                <option value="Bankim"></option>
+                <option value="Belel"></option>
+                <option value="Maroua 1"></option>
+                <option value="Maroua 2"></option>
+                <option value="Maroua 3"></option>
+                <option value="Kousseri"></option>
+                <option value="Yagoua"></option>
+                <option value="Mokolo"></option>
+                <option value="Mora"></option>
+                <option value="Kaele"></option>
+                <option value="Bogo"></option>
+                <option value="Guidiguis"></option>
+                <option value="Maga"></option>
+                <option value="Makari"></option>
             </datalist>
+            <input type="text" placeholder="enter refered donor's quater">
             <input type="tel" placeholder="refered donor's phone number eg 6XX XX XX XX" required>
             <button class="sendrequest-btn">Add willing Donor</button>
         </div>
