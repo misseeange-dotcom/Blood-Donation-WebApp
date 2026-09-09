@@ -1,0 +1,26 @@
+USE defaultdb;
+CREATE TABLE IF NOT EXISTS user  (id INT AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(90) NOT NULL,
+					email VARCHAR(90) NOT NULL,
+                    password VARCHAR(20) NOT NULL,
+                    phone VARCHAR(20) NOT NULL,
+                    sub_division VARCHAR(50) NOT NULL,
+                    quarter VARCHAR(50) NOT NULL,
+                    blood_type VARCHAR(8)NOT NULL ,
+                    status VARCHAR(10) NOT NULL);
+CREATE TABLE IF NOT EXISTS contact  (contact_id INT AUTO_INCREMENT PRIMARY KEY,
+                     added_by INT NOT NULL,
+				     contact_name VARCHAR(90) NOT NULL,
+                     contact_phone VARCHAR(20)  NOT NULL,
+                     contact_sub_division VARCHAR(50)NOT NULL,
+                     contact_blood_type VARCHAR(8)NOT NULL,
+                     contact_quarter VARCHAR(50)NOT NULL,
+                     FOREIGN KEY (added_by) REFERENCES user(id) );
+CREATE TABLE IF NOT EXISTS blood_request  (blood_request_id INT AUTO_INCREMENT PRIMARY KEY,
+                           user_id INT NOT NULL,
+						   blood_needed VARCHAR(8)NOT NULL,
+                           sub_division_needed VARCHAR(50)NOT NULL,
+						   quarter_needed VARCHAR(50)NOT NULL,
+                           urgency VARCHAR(8)NOT NULL,
+                           date_needed VARCHAR(20)NOT NULL,
+						   FOREIGN KEY (user_id) REFERENCES user(id) );
