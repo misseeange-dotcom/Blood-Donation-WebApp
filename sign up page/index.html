@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Connect | Sign In</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="brand-panel">
+      <div class="brand-content">
+        <div class="drop-icon">🩸</div>
+        <h1>Blood Connect</h1>
+        <p>Connecting donors and patients, one drop at a time.</p>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <form id="signinForm" class="signin-form" novalidate>
+        <h2>Create your account</h2>
+        <p class="subtitle">Fill in your details to sign in</p>
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Sara Amrani" />
+          <span class="error-message" id="error-fullName"></span>
+        </div>
+
+        <div class="field">
+          <label for="bloodType">Blood type</label>
+          <select id="bloodType" name="bloodType">
+            <option value="" disabled selected>Select your blood type</option>
+            <option value="O-">O-</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="A+">A+</option>
+            <option value="B-">B-</option>
+            <option value="B+">B+</option>
+            <option value="AB-">AB-</option>
+            <option value="AB+">AB+</option>
+          </select>
+          <span class="error-message" id="error-bloodType"></span>
+        </div>
+
+        <div class="field">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="City, Country" />
+          <span class="error-message" id="error-location"></span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 0612345678" />
+          <span class="error-message" id="error-phone"></span>
+        </div>
+
+        
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="At least 6 characters" />
+          <span class="error-message" id="error-password"></span>
+        </div>
+
+        <!-- Sign in as: donor or patient -->
+        <div class="field">
+          <label>Sign in as</label>
+          <div class="role-options">
+            <label class="role-card">
+              <input type="radio" name="role" value="donor" />
+              <span>🙋 Donor</span>
+            </label>
+            <label class="role-card">
+              <input type="radio" name="role" value="patient" />
+              <span>🏥 Patient</span>
+            </label>
+          </div>
+          <span class="error-message" id="error-role"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign In</button>
+
+        <!-- Success message, hidden until the form passes validation -->
+        <p class="success-message" id="successMessage"></p>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Our JavaScript file (behavior / validation) -->
+  <script src="script.js"></script>
+</body>
+</html>
