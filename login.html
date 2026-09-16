@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            login page
+        </title>
+     <style>
+        body{
+            background-color: #fdeeee;
+            font-family: arial,sans-serif;
+            color:red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+        }
+          h1{
+            font-size: 20px;
+        }
+        .header{
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 50px;
+            position: fixed;
+            align-items: center;
+            text-align: center;
+            background-color:white;
+            border-radius: 10px;
+
+         }
+        button{
+            border-radius: 8px;
+            padding-bottom: 5px;
+            border: solid red ;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            padding-top: 10px;
+            width: 100px;
+            margin-left: 153px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .login-form{
+            width: 400px;
+            height: 250px;
+            background-color:white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            text-align: center;
+            justify-content: center;
+            text-align: center;
+        }
+        input{
+            margin: 0px 10px 11px;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            border: solid black 1px;
+        }
+        .message{
+            color:gray;
+            margin-top: 10px;
+            width:300px;
+            
+            margin-left: 50px;
+            
+        }
+        .link{
+            color: red;
+            text-decoration: none;
+            
+        }
+    
+     </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1 >Welcome Back ! </h1></div>
+     <div class="login-form">
+            <h2 class="form-title">Login </h2>
+            <input type="email" placeholder="Enter your email"required>
+            <input type="password" placeholder="Enter your password">
+            <button >Login</button>
+          <div class="message">
+            don't have an account ?   <a href="signin.html" class="link">Create account</a>
+        </div>
+     </div>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Donor's board
+        </title>
+     <style>
+        body{
+            background-color:#fdeeee;
+            font-family: arial,sans-serif;
+            color:red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 20px;
+        }
+        .header{
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 50px;
+            position: fixed;
+            align-items: center;
+            text-align: center;
+            background-color:white;
+            z-index: 1;
+            border-radius: 10px ;
+
+         }
+        .side-bar{
+            top:0;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            border-right: color red;
+            background-color:white;
+            border-radius: 10px;
+
+        }
+        .view-icon{
+            margin-top: 100px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size:50px ;
+            cursor: pointer;
+        }
+        .view-icon:hover{
+            color:white;
+            background-color: rgb(247, 103, 103);
+            transition: all ease 0.3s;
+            border-radius: 50px;
+            
+        }
+        .refer-icon{
+            margin-top: 100px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .refer-icon:hover{
+            color:white;
+            background-color: rgb(247, 103, 103);
+            transition: all ease 0.3s;
+            border-radius: 50px;
+        }
+        p{
+            font-size: 17px;
+            text-align: center;
+            
+        }
+        .welcome{
+            padding-top: 50px;
+            text-align: center;
+            
+        }
+        .sub-title{
+            color:rgb(186, 185, 185);
+            margin-top: 0;
+            font-family: italic;
+            text-align: center;
+        }
+        .donor-box{
+            height: 125px;
+            width: 400px;
+            flex-direction: row;
+            align-items: center;
+            background-color:white;
+            margin: 50px;
+            border-top-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .title1{
+        color: rgb(186, 185, 185);
+        text-align: center;
+        }
+        .title2{
+            text-align: center;
+        }
+        button{
+            border-radius: 8px;
+            padding: 5px 2px 5px 2px;
+            border: solid red ;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+     </style>
+    </head>
+    <body>
+       
+        <div class="header">
+            <h1 >Donor's board</h1>
+        </div>
+        <div class="side-bar">
+            <div class="view-icon" onclick="">&#128065;
+               <p>View requests</p>
+            </div>
+           <a href="referdonor.html" style="text-decoration: none;color:red"> <div class="refer-icon" onclick="">&#10010;
+                <p>Add and refer willing donors</p>
+            </div></a>
+        </div>
+        <h1 class="welcome">Welcome Back!</h1>
+        <p class="sub-title">View urgent requests near you and refer other willing donors</p>
+        <div class="donor-box">
+           <p class="title1"> are you a patient ? </p>
+            <p class="title2">click here &#10140;  <a href="patient.html"><button >Patients page</button></p></a>
+
+        </div>
+    </body>
+</html>
