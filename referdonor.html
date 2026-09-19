@@ -142,6 +142,13 @@
             color: white;
             font-weight: bold;
         }
+                      #response {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 16px;
+                color:red;
+                font-weight: bold;
+            }
      </style>
     </head>
     <body>
@@ -292,9 +299,41 @@
                 <option value="Maga"></option>
                 <option value="Makari"></option>
             </datalist>
-            <input type="text" placeholder="enter refered donor's quater">
-            <input type="tel" placeholder="refered donor's phone number eg 6XX XX XX XX" required>
-            <button class="sendrequest-btn">Add willing Donor</button>
+            <input type="text" placeholder="enter refered donor's quater" id="quarter" required>
+            <input type="tel" placeholder="refered donor's phone number eg 6XX XX XX XX" id="phone" required>
+            <button class="sendrequest-btn" onclick="adddonor()">Add willing Donor</button>
+             <div id="response"></div>
         </div>
     </body>
 </html>
+<script>
+    async function adddonor(){
+       const validbloodtypes = ["A+","A-","B+","B-","O+","O-","AB+","AB-"];
+       const validsubdivisions = ["Yaounde 1","Yaounde 2","Yaounde 3","Yaounde 4","Yaounde 5","Yaounde 6","Yaounde 7","Bafia","Mbalmayo","Obala","Akonolinga","Monatele","Eseka","Nanga-Eboko","Sa'a","Ndikinimeki","Yoko","Douala 1","Douala 2","Douala 3","Douala 4","Douala 5","Douala 6","Edea 1","Edea 2","Nkongsamba 1","Nkongsamba 1","Nkongsamba 3","Loum","Yabassi","Manjo","Dizangue","Bafoussam 1","Bafoussam 2","Bafoussam 3","Dschang","Foumban","Mbouda","Bafang","Bagangte","Foumbot","Babam","Bandjoun","kumbo","Wum","Ndop","Bamenda 1","Bamenda 2","Bamenda 3","Fundong","Bali","Batibo","Mbengwi","Buea","Limbe 1","Limbe 2","Limbe 3","Kumba 1","Kumba 2","Kumba 3","Tiko","Muyuka","Mamfe","Mundemba","Ekondo-tit","Ebolowa 1","Ebolowa 2","Kribi 1","Kribi 2","Sangmelima","Ambam","Djoum","Meyomessala","Lolodorf","Bertoua 1","Bertoua 2","Batouri","Abong-Mbang","Yokadouma","Garoua-Boulai","Lomie","Messamena","Garoua 1","Garoua 2","Garoua 3","Guider","Poli","Lagdo","Tchollire","Figuil","Pitoa","Ngaroundere 1","Ngaroundere 2","Ngaroundere 3","Meiganga","Banyo","Tibati","Tignere","Bankim","Belel","Maroua 1","Maroua 2","Maroua 3","Kousseri","Yagoua","Mokolo","Mora","Kaele","Bogo","Guidiguis","Maga","Makari"];   
+       
+       let blood_type = document.getElementById('blood').value;
+       let sub_division = document.getElementById('sub').value;
+       let quarter = document.getElementById('quarter').value;
+       let phone = document.getElementById('phone').value;
+
+       if (!blood_type || !sub_division || !quarter || !phone){
+        document.getElementById('response').textContent = 'Fill in all contats info';
+        return;
+       }
+       if(!validbloodtypes.includes(blood_type)){
+        document.getElementById('response').textContent = 'please fill blood type as in the list';
+        return;
+       }
+       if(!validsubdivisions.includes(sub_division)){
+        document.getElementById('response').textContent = 'please fill sub-division as in the list ';
+        return;
+       }
+       const response = await fetch('http://localhost:3000/referdonor',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({blood_type,sub_division,quarter,phone})
+       });
+       const data = await response.json();
+       document.getElementById('response').textContent = data.success || data.error;
+    }
+</script>

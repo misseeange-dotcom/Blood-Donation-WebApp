@@ -74,9 +74,14 @@
         .link{
             color: red;
             text-decoration: none;
-            
         }
-    
+           #response {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 16px;
+                color:red;
+                font-weight: bold;
+            }
      </style>
     </head>
     <body>
@@ -84,12 +89,32 @@
             <h1 >Welcome Back ! </h1></div>
      <div class="login-form">
             <h2 class="form-title">Login </h2>
-            <input type="email" placeholder="Enter your email"required>
-            <input type="password" placeholder="Enter your password">
-            <button >Login</button>
+            <input type="email" placeholder="Enter your email" id="email" required>
+            <input type="password" placeholder="Enter your password" id="password" required>
+            <button onclick="login()" >Login</button>
+              <div id="response"></div>
           <div class="message">
             don't have an account ?   <a href="signin.html" class="link">Create account</a>
         </div>
      </div>
     </body>
 </html>
+<script>
+    async function login(){
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email,password})
+        });
+        const data = await response.json();
+
+        if (data.success){
+            window.location.href= 'donor.html'
+        }else{
+            document.getElementById('response').textContent = data.error;
+        }
+    }
+</script>
