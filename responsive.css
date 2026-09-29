@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 76px 24px 32px;
+}
+
+@media (min-width: 761px) {
+    body:has(.side-bar) {
+        padding-left: 184px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0 12px;
+}
+
+.side-bar {
+    top: 50px;
+    width: 150px;
+    overflow-y: auto;
+}
+
+.donor-box,
+.login-form,
+.signin-form,
+.referdonor-form,
+.requestblood-form {
+    width: min(100%, 420px);
+    height: auto;
+    min-width: 0;
+    padding: 16px;
+}
+
+.donor-box {
+    min-height: 125px;
+}
+
+.login-form,
+.signin-form {
+    gap: 4px;
+}
+
+.login-form input,
+.signin-form input,
+.referdonor-form input,
+.requestblood-form input {
+    width: 100%;
+    min-height: 42px;
+    margin: 0 0 10px;
+    padding: 8px 10px;
+}
+
+.login-form button,
+.signin-form button,
+.sendrequest-btn {
+    width: fit-content;
+    min-width: 110px;
+    min-height: 40px;
+    margin: 8px auto 0;
+    padding: 8px 16px;
+}
+
+.message {
+    width: auto;
+    margin: 10px 0 0;
+    padding: 0 4px;
+}
+
+@media (max-width: 1024px) {
+    body {
+        align-items: center;
+        padding: 68px 16px 28px;
+    }
+
+    body:has(.side-bar) {
+        padding-bottom: calc(120px + env(safe-area-inset-bottom));
+    }
+
+    .header {
+        height: 54px;
+    }
+
+    .side-bar {
+        position: fixed;
+        top: auto;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        left: 50%;
+        width: min(calc(100% - 24px), 560px);
+        max-width: 560px;
+        margin: 0;
+        padding: 8px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+        transform: translateX(-50%);
+        border: 1px solid rgba(178, 34, 52, 0.16);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 8px 24px rgba(126, 28, 42, 0.18);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        z-index: 5;
+    }
+
+    .side-bar > a,
+    .side-bar > div {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .side-bar .view-icon,
+    .side-bar .refer-icon,
+    .side-bar .blood-icon,
+    .side-bar .contact-icon {
+        width: 100%;
+        margin: 0;
+        padding: 8px 4px;
+        font-size: 25px;
+    }
+
+    .side-bar p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        line-height: 1.25;
+    }
+
+    .welcome {
+        padding-top: 8px;
+    }
+
+    .donor-box,
+    .login-form,
+    .signin-form,
+    .referdonor-form,
+    .requestblood-form {
+        max-width: 100%;
+    }
+
+    .login-form input,
+    .signin-form input,
+    .referdonor-form input,
+    .requestblood-form input {
+        margin-bottom: 6px;
+    }
+
+    .donor-box {
+        margin: 8px 0;
+    }
+
+    .sub-title {
+        max-width: 42rem;
+        padding: 0 4px;
+        line-height: 1.5;
+    }
+
+    .login-form,
+    .signin-form {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .side-bar p {
+        font-size: 11px;
+    }
+}
