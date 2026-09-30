@@ -349,6 +349,7 @@
     let phone = document.getElementById('phone').value;
     let urgency = document.getElementById('urge').value;
     let date = document.getElementById('date').value;
+    let user_id = localStorage.getItem('user_id');
 
     if ( !blood_type || !sub_division || !quarter || !phone || !urgency || !date){
         document.getElementById('response').textContent = 'Fill in all the fields !';
@@ -362,12 +363,12 @@
         document.getElementById('response').textContent = 'please fill in sub-division as in the list !';
         return;
     }
-    const response = await fetch('http://localhost3000/requestblood',{
+    const response = await fetch('http://localhost:3000/requestblood',{
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
-        body:JSON.stringify ({blood_type,sub_division,quarter,phone,urgency,date})
+        body:JSON.stringify ({user_id,blood_type,sub_division,quarter,phone,urgency,date})
     });
        const data = await response.json();
-   document.getElementById('response').textContent = data.message || data.error;     
+   document.getElementById('response').textContent = data.message;    
 }
 </script>

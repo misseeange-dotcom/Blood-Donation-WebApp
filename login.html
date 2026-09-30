@@ -112,9 +112,11 @@
         const data = await response.json();
 
         if (data.success){
+            localStorage.setItem("user_id", data.user_id);
+            alert(data.message);
             window.location.href= 'donor.html'
         }else{
-            document.getElementById('response').textContent = data.error;
+            alert(data.message);
         }
     }
 </script>
