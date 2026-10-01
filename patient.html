@@ -162,7 +162,7 @@
 <script>
     async function viewdonors(){
         let user_id = localStorage.getItem("user_id");
-        const response = await fetch("http://localhost:3000/view-donors?user_id=" + user_id);
+        const response = await fetch("https://blood-donation-webapp-0gig.onrender.com/view-donors?user_id=" + user_id);
         const data = await response.json();
         if(!data.success){
              document.getElementById("response").innerHTML = data.message;
@@ -180,7 +180,7 @@
          }
              async function viewcontact(){
         let user_id = localStorage.getItem("user_id");
-        const response = await fetch("http://localhost:3000/view-contacts?user_id=" + user_id);
+        const response = await fetch("https://blood-donation-webapp-0gig.onrender.com/view-contacts?user_id=" + user_id);
         const data = await response.json();
             if(!data.success){
              document.getElementById("response").innerHTML = data.message;

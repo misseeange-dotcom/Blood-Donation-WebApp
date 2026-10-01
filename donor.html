@@ -143,7 +143,7 @@
 <script>
       async function viewrequest(){
         let user_id = localStorage.getItem("user_id");
-        const response = await fetch("http://localhost:3000/view-patients?user_id=" + user_id);
+        const response = await fetch("https://blood-donation-webapp-0gig.onrender.com/view-patients?user_id=" + user_id);
         const data = await response.json();
             if(!data.success){
             document.getElementById("response").innerHTML = data.message;

@@ -363,7 +363,7 @@
         document.getElementById('response').textContent = 'please fill in sub-division as in the list !';
         return;
     }
-    const response = await fetch('http://localhost:3000/requestblood',{
+    const response = await fetch('https://blood-donation-webapp-0gig.onrender.com/requestblood',{
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify ({user_id,blood_type,sub_division,quarter,phone,urgency,date})
