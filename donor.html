@@ -126,7 +126,7 @@
             <h1 >Donor's board</h1>
         </div>
         <div class="side-bar">
-            <div class="view-icon" onclick="">&#128065;
+            <div class="view-icon" onclick="viewrequest()">&#128065;
                <p>View requests</p>
             </div>
            <a href="referdonor.html" style="text-decoration: none;color:red"> <div class="refer-icon" onclick="">&#10010;
@@ -138,7 +138,28 @@
         <div class="donor-box">
            <p class="title1"> are you a patient ? </p>
             <p class="title2">click here &#10140;  <a href="patient.html"><button >Patients page</button></p></a>
-
         </div>
+        <div id="response"></div>
     </body>
 </html>
+<script>
+      async function viewrequest(){
+        let user_id = localStorage.getItem("user_id");
+        const response = await fetch("https://blood-donation-webapp-0gig.onrender.com/view-patients?user_id=" + user_id);
+        const data = await response.json();
+            if(!data.success){
+            document.getElementById("response").innerHTML = data.message;
+            return;
+        }
+         document.getElementById("response").innerHTML = data.data.map(patient => `
+             <div style=" margin:10px; width:370px;border-radius:8px; padding:15px; color:white; background-color:black">
+            <b>Blood needed:</b> ${patient.blood_needed}<br>
+           <b>Sub-division needed:</b> ${patient.sub_division_needed}<br> 
+            <b>quarter needed:</b>${patient.quarter_needed}<br> 
+            <b> Urgency:</b> ${patient.urgency}<br>
+            <b>Date needed:</b>${patient.date_needed}<br>
+            <b>Patient's contact:</b>${patient.phone}
+            </div>
+            `).join('');
+         }
+</script>
