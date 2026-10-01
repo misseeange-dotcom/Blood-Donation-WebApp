@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3",
+    "mysql2": "^3.24.2"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
