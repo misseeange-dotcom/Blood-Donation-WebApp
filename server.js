@@ -12,7 +12,7 @@ const database = mysql2.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
-    ssl: {rejectUnauthorized: true} 
+    ssl: {rejectUnauthorized: false} 
 });
 
 app.post('/register', (req,res)=> {
